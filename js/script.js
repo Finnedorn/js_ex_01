@@ -133,8 +133,6 @@ for(let i = 1; i <= 8; i++) {
         //inserisco il div dentro il wrapper di cui ho creato una const
         wrapperb.append(square);
     }
-
-    
-
-    
 }
+
+
