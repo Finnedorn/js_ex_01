@@ -29,7 +29,7 @@ for(let contatore = 1;contatore < 11; contatore++) {
 for(let i = 1; i < 11; i++) {
 
     // istruzioni da ripetere tot volte
-
+    console.log(i);
 }
 
 //se volessi far incremetare non di un valore bensì di 2 o più 
@@ -38,7 +38,7 @@ for(let i = 1; i < 11; i++) {
 for(let i = 1; i < 11; i+=2) {
 
     // istruzioni da ripetere tot volte
-
+    console.log(i);
 }
 
 //oppure potrei fare un for che conta alla rovescia (decrementale)
@@ -46,6 +46,95 @@ for(let i = 1; i < 11; i+=2) {
 for(let i = 10; i = 0; i--) {
 
     // istruzioni da ripetere tot volte
+    console.log(i);
+}
+
+
+//ex01
+
+
+//voglio che compaiano dentro al box wrapper 100 quadratini uno arancione ed uno marrone alternati
+
+//creo una const per pescarmi il div che conterrà le box 
+const wrapper = document.getElementById('boxwrapper');
+
+for(let i = 1; i <= 100; i++) {
+
+    console.log(i);
+    //dichiaro una variabile
+    let bgcolorsquare;
+    //dichiaro che se i è pari bg sarà even o odd (pari o diuspari)
+    // i%2 mi da 0? allora è pari
+    if(i % 2 === 0) {
+        bgcolorsquare = 'even';
+    } else {
+        bgcolorsquare = 'odd';
+    }
+
+    //creo una costante che mi crei un div dentro l'html (occhio ancora non è inserito sto div!!!)
+    const square = document.createElement('div');
+
+    //do al div una classe box e la classe che sarà even odd a seconda della conta del i (bonus: do un flex per allineare il contenuto che inserirò)
+    square.className = `box ${bgcolorsquare} d-flex justify-content-center align content center`;
+
+    //bonus: comunico al div di inserire all'interno il valore del i cosi da avere ogni quadratino contato da 1 a 100 
+    square.innerHTML = i
+
+    //inserisco il div dentro il wrapper di cui ho creato una const
+    wrapper.append(square);
 
 }
 
+
+
+//e se volessi una scacchiera?
+
+
+//creo una const per pescarmi il div che conterrà le box 
+const wrapperb = document.getElementById('boxwrapper-b');
+
+
+for(let i = 1; i <= 8; i++) {
+
+    //dichiaro un ciclo interno a cui darò una variabile diversa da i cioè c che mi crei i quadrati del secondo colore
+    for(let c = 1; c<=8; c++) {
+        //dichiaro una variabile
+        let bgcolorsquare;
+        //se i è pari e se c è pari allora fammi un quadrato arancione
+        //se i è pari ma c non lo è allora fammi un quadrato marrone
+        if(i % 2 > 0) {
+
+            if(c % 2 === 0) {
+                bgcolorsquare = 'orange';
+            } else {
+                bgcolorsquare = 'brown'
+            }
+        //se però i è dispari e se c è pari allora fammi un quadrato marrone
+        //se però i è dispari e c è pari allora fammi un quadrato arancione 
+        } else {
+            
+            if (c % 2 === 0){
+                bgcolorsquare = 'brown';
+            } else {
+                bgcolorsquare = 'orange';
+            }
+
+        }
+
+        //creo una costante che mi crei un div dentro l'html (occhio ancora non è inserito sto div!!!)
+        const square = document.createElement('div');
+
+        //do al div una classe box e la classe che sarà even odd a seconda della conta del i (bonus: do un flex per allineare il contenuto che inserirò)
+        square.className = `box ${bgcolorsquare} d-flex justify-content-center align content center`;
+
+        //bonus: comunico al div di inserire all'interno il valore del i cosi da avere ogni quadratino contato da 1 a 100 
+        square.innerHTML = i
+
+        //inserisco il div dentro il wrapper di cui ho creato una const
+        wrapperb.append(square);
+    }
+
+    
+
+    
+}

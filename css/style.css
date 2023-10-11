@@ -12,9 +12,27 @@
 
 .even {
     background-color: orange;
+    border: 1 px solid black;
 }
 
 .odd {
     background-color: brown;
+    border: 1 px solid black;
 }
 
+#box-wrapper-b {
+    width: 400px;
+    height: 400px;
+    margin: 50px auto;
+    background-color: rgb(23, 23, 134);
+}
+
+.orange {
+    background-color: orange;
+    border: 1 px solid black;
+}
+
+.brown {
+    background-color: brown;
+    border: 1 px solid black;
+}
