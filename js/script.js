@@ -144,17 +144,162 @@ for(let i = 1; i <= 8; i++) {
 const  classe107 = [
     'giulia', //elemento 0
     'erica',  //elemento 1
-    'matteo' //elemento 2
+    'matteo', //elemento 2
+    'alexandru' //elemento 3
 ];
 
 //se volessi leggere l'elemento 1 del mio array?
 
 console.log(classe107[1]);
 
+//se volessi fare un check della lunghezza dell'array?
+console.log(classe107.length); 
+
+//se io volessi selezionare l'ultimo elemento dell'array? 
+console.log(classe107[classe107.length - 1]);
+
+//se io chiamassi un elemento che supera la lista ?
+console.log(classe107[classe107.length]);
+//nota bene !!! lenght comincia a contare da 1 in una lista di 4 elementi ma l'array come primo elemento ha lo 0 !! quindi lenght cercherà l'elemento 4 ma non trovandolo darà undefined!!!
+
 //per accedere all'elemento dell'array invece 
 //nomearray[indice elemento]
 
 classe107[2] //ho selezionato 'matteo'!
 
+//se volessi cambiare il nome di un elemento nell'array?
+classe107[1] = 'clelia'
 
+//se volessi aggiungere contenuto ad un elmento array?
+classe107[1] += 'fradella'
+//in questo modo otterrò che il numero 1 che è clelia adesso sarà clelia fradella
+
+//pop() and push() 
+
+
+//il pop rimuove l'ultimo elmento di un array  
+
+const  classe107 = [
+    'giulia', //elemento 0
+    'erica',  //elemento 1
+    'matteo', //elemento 2
+    'alexandru' //elemento 3
+];
+
+//voglio rimuovere alexandru
+classe107.pop()
+
+//il push invece aggiunge un elemento come ultimo nell'array
+
+
+//shift() e unshift()
+
+//shift rimuove il primo elmeneto dall'array
+//nota! che una volta rimosso l'array si risistemerà e l'elemento che prima era 1 adesso sarà 0
+
+
+//unshift invece aggiunge un elemento come primo 
+//nota ! che una volta aggiunto un elemento questo sarà il nuovo 0 e quello che prima era 0 diventerà 1 
+
+
+
+//tostring() e join()
+
+//join si usa per inserire un elemento come uno spazio o una virgola che separi un array una volta stampato sul div
+
+
+
+//splice()
+
+//si usa per inserire un elemento in mezzo all'array
+
+const  classe107 = [
+    'giulia', //elemento 0
+    'erica',  //elemento 1
+    'matteo', //elemento 2
+    'alexandru' //elemento 3
+];
+
+classe107.splice(2, 0, 'sandra', 'luca');
+//il 2 sta per parti da qua 
+//0 sta per quanti elementi devo eliminare
+//gli elementi dopo sono quelli da aggiungere
+//quindi gli ho detto: a partire da matteo aggiungi sandra e luca
+
+classe107.splice(2, 1);
+//elinima cominciando da matteo 1 elemento nell'array, quindi matteo stesso!
+
+
+//voglio inserire nella array allievi selezionati un allievo a caso da classe 107
+
+const  classe107 = [
+    'giulia', //elemento 0
+    'erica',  //elemento 1
+    'matteo', //elemento 2
+    'alexandru' //elemento 3
+];
+
+const allieviselezionati = [];
+
+//creo una variabile random a cui dico: pesca da 0 a l'ultimo elemento di classe 107
+let allievoindex = getRndinteger(0, classe107.length -1);
+
+//ora semplicemente do il valore della variabile random all'array 
+classe107[allievoindex];
+
+//voglio pushare gli elementi seelzionati casualmente in una sezione apparte stile estrazione lotto?
+//semplicemente dico alla costante allievi selezionati: pushami nella tua array gli elementi estratti random da classe 107
+allieviselezionati.push(classe107[allievoindex]);
+
+//adesso voglio rimuovere l'elemento pescato, ora nella lista allievi selezionati, dalla lista della classe 
+//quindi uso splice e dico: prendi la variabile allievoindex e togli a partire da quello un elemento, quindi quello stesso elemento!
+classe107.splice(allievoindex, 1);
+
+
+
+//voglio linkarlo ad un bottone che me lo stampi nell'html
+
+
+const allieviselezionati = [];
+
+//creo un bototne nell'html e mi creo una const che mi linki a quella classe
+const  btn = document.querySelector('button');
+//creo una const linkata all'h2 dentro all'html
+const allievo = document.querySelector('h2');
+
+//creo una funzione per cui ad ogni click mi peschi un elemento
+btn.addEventListener('click', function() {
+
+    //se l'array classe 107 ha lunghezza maggiore a 0 continua a pescare 
+    //in questo caso bisogna fare differenza tra lenght e catalogazione array in quanto 0 per l'array è un elemento ma per length ha valore 1 quindi continerà a pescare fino al numero 0 dell'array compreso!!!!!
+    if (classe107.length > 0) {
+        //creo una variabile random a cui dico: pesca da 0 a l'ultimo elemento di classe 107
+        let allievoindex = getRndinteger(0, classe107.length -1);
+
+        //ora dico che il testo interno di allievo cioè h2 sarà pari all'elemento array estratto random 
+        //quindi stampa sull html il nome estratto 
+        allievo.innerText = classe107[allievoindex];
+
+        //voglio pushare gli elementi seelzionati casualmente in una sezione apparte stile estrazione lotto?
+        //semplicemente dico alla costante allievi selezionati: pushami nella tua array gli elementi estratti random da classe 107
+        allieviselezionati.push(classe107[allievoindex]);
+
+        //adesso voglio rimuovere l'elemento pescato, ora nella lista allievi selezionati, dalla lista della classe 
+        //quindi uso splice e dico: prendi la variabile allievoindex e togli a partire da quello un elemento, quindi quello stesso elemento!
+        classe107.splice(allievoindex, 1);
+
+        //quando non ci sono più elementi dell'array, scrivi questo!
+    } else {
+        allievo.innerText = 'non ci sono più allievi';
+    }
+})
+
+
+
+
+const numbers = [1,2,3,10, 15, 20, 22];
+
+for(let i = 0; i < numbers.length; i++) {
+    let numerocorrente = numbers[i];
+}
 
