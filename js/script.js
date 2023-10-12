@@ -136,3 +136,25 @@ for(let i = 1; i <= 8; i++) {
 }
 
 
+                //Array
+
+
+//una lista di nomi separati da una virgola all'interno di una parentesi graffa 
+
+const  classe107 = [
+    'giulia', //elemento 0
+    'erica',  //elemento 1
+    'matteo' //elemento 2
+];
+
+//se volessi leggere l'elemento 1 del mio array?
+
+console.log(classe107[1]);
+
+//per accedere all'elemento dell'array invece 
+//nomearray[indice elemento]
+
+classe107[2] //ho selezionato 'matteo'!
+
+
+
