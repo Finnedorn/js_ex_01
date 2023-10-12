@@ -303,3 +303,96 @@ for(let i = 0; i < numbers.length; i++) {
     let numerocorrente = numbers[i];
 }
 
+
+
+
+//voglio creare un form che mi dica se ho gia nella lista un determinato elemento
+
+const  classe107 = [
+    'giulia', //elemento 0
+    'erica',  //elemento 1
+    'matteo', //elemento 2
+    'alexandru' //elemento 3
+];
+
+//mi faccio una const che linkerò al mio bottone "verifica"
+const button = document.querySelector('button');
+
+const alert = document.querySelector('.alert')
+
+button.addEventListener('click', function{
+
+    //mi pesco il valore dell'id del form con id nome 
+    let studentname = document.getElementById('nome').value;
+    let class = document.getElementById('class');
+    let text = document.getElementById('text');
+
+    //creo un ciclo che mi scorra tutti gli elementi dell'array
+    //i sta a zero, finche i è minore alla lunghezza dell'array tu continua a scorrere, ad ogni volta aggiungi 1 
+    for(let i = 0; i < classe107.length; i++) {
+        //creo una variabile che associ i a classe 107
+        let currentname = classe107[i];
+
+        if (currentname.toLocaleLowerCase() = studentname.toLocaleLowerCase()) {
+
+            class.innerHTML = 'alert-success';
+            text.innerHTML = 'Presente!';
+
+        } else {
+
+            class.innerHTML = 'alert-danger';
+            text.innerHTML = 'Non Presente!';
+        }
+    }
+})
+
+
+//gli array possono contenere altri array!!!!
+
+
+const biggerone =[
+    [10, 15, 2, 33, 55] 
+    [
+        'giulia',
+        'mekki',
+        'gino',
+        'ule'
+    ]
+];
+
+
+//se io voglio selezionare 55?
+//il primo numero sta per il primo array dei due quindi 0
+//il secondo numero sta per il numero dentro l'array
+console.log(biggerone[0][4]);
+
+//in questo modo pesco mekki
+console.log(biggerone[1][2]);
+
+//voglio creare un ciclo che mi peschi in console tutti gli elementi del macro array
+//cicla per tutta la lunghezza dell'array quindi 2 volte
+for(let p = 0; p < biggerone.length; p++) {
+    //ma dentro c'è un altro ciclo quindi cicla anche questo di tutti gli elementi interni quindi 4 volte 
+    for( let c = 0; c < biggerone[p].lenght; c++){
+        
+        console.log(biggerone[p][c])
+    }
+}
+
+//se io voglio creare un ciclo che mi trovi un elemento particolare dentro ad un macroarray?
+
+let parentuleindex;
+let uleindex;
+//voglio creare un ciclo che mi peschi in console tutti gli elementi del macro array
+//cicla per tutta la lunghezza dell'array quindi 2 volte
+for(let p = 0; p < biggerone.length; p++) {
+    //ma dentro c'è un altro ciclo quindi cicla anche questo di tutti gli elementi interni quindi 4 volte 
+    for( let c = 0; c < biggerone[p].lenght; c++){
+        if([p][c] === 'ule') {
+            uleindex = c;
+            parentuleindex = p;
+        }
+    }
+}
+
+console.log(biggerone[parentuleindex][uleindex]);
