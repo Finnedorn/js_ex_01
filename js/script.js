@@ -296,57 +296,6 @@ btn.addEventListener('click', function() {
 
 
 
-
-const numbers = [1,2,3,10, 15, 20, 22];
-
-for(let i = 0; i < numbers.length; i++) {
-    let numerocorrente = numbers[i];
-}
-
-
-
-
-//voglio creare un form che mi dica se ho gia nella lista un determinato elemento
-
-const  classe107 = [
-    'giulia', //elemento 0
-    'erica',  //elemento 1
-    'matteo', //elemento 2
-    'alexandru' //elemento 3
-];
-
-//mi faccio una const che linkerò al mio bottone "verifica"
-const button = document.querySelector('button');
-
-const alert = document.querySelector('.alert')
-
-button.addEventListener('click', function{
-
-    //mi pesco il valore dell'id del form con id nome 
-    let studentname = document.getElementById('nome').value;
-    let class = document.getElementById('class');
-    let text = document.getElementById('text');
-
-    //creo un ciclo che mi scorra tutti gli elementi dell'array
-    //i sta a zero, finche i è minore alla lunghezza dell'array tu continua a scorrere, ad ogni volta aggiungi 1 
-    for(let i = 0; i < classe107.length; i++) {
-        //creo una variabile che associ i a classe 107
-        let currentname = classe107[i];
-
-        if (currentname.toLocaleLowerCase() = studentname.toLocaleLowerCase()) {
-
-            class.innerHTML = 'alert-success';
-            text.innerHTML = 'Presente!';
-
-        } else {
-
-            class.innerHTML = 'alert-danger';
-            text.innerHTML = 'Non Presente!';
-        }
-    }
-})
-
-
 //gli array possono contenere altri array!!!!
 
 
@@ -396,3 +345,41 @@ for(let p = 0; p < biggerone.length; p++) {
 }
 
 console.log(biggerone[parentuleindex][uleindex]);
+
+
+//split()
+
+//splitta una stringa dentro un array
+
+const stringa = 'ciao, sono qua.'
+
+const words = stringa.split(' '); //lascia lo spazio per comunicare di inserire il testo
+
+console.log(words) 
+//mi darà un'array composta da:
+'ciao,', 'sono', 'qua.'
+
+
+
+//html collection
+
+//sono simili ad array però non subiscono l'effetto di alcuni comandi 
+
+//tag come getelementsbyclassname o getelementsbyname o altri richiamano una collection, in questo caso mi sono linkato a tutti i div con classe example nel mio html
+const collection = document.getElementsByClassName("example");
+//adesso come se fosse un array gli dico di scrivere nel primo array quindi nel primo div con classe 
+collection[1].innerHTML = 'hello world!'
+
+//ci sono anche altri tag che creano invece le node.list come quaryselectall() ma lo vedremo meglio in futuro
+
+
+
+
+//carosello 
+
+//come lo creo ?
+
+
+
+
+
